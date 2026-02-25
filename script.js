@@ -60,8 +60,16 @@ function playGame(){
     
     for(let i = 1; i <= 5; i++){
 
+        let currentHumanScore = humanScore;
+        let currentComputerScore = computerScore;
+
         playRound(getHumanChoice(), getComputerChoice());
         console.log(`HumanScore: ${humanScore} \n Computer Score: ${computerScore}`);
+
+        if((currentHumanScore === humanScore) && (currentComputerScore === computerScore)){
+            i--;
+        }
+        
     }
 }
 
